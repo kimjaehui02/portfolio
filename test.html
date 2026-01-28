@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개발자 포트폴리오 - KimJaeHu</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e293b;
+            --text-color: #334155;
+            --bg-color: #ffffff;
+            --light-bg: #f8fafc;
+            --border-color: #e2e8f0;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+        }
+        body {
+            font-family: 'Pretendard', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: #f1f5f9;
+            width: 210mm;
+            min-height: 297mm;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        @media print {
+            body {
+                margin: 0;
+                box-shadow: none;
+                width: 100%;
+            }
+            .no-print {
+                display: none;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+        }
+        .container {
+            padding: 40px 50px;
+            max-width: 100%;
+        }
+        /* Header */
+        header {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .header-left h1 {
+            font-size: 36px;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+        .role {
+            font-size: 18px;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .contact-info {
+            font-size: 14px;
+            color: #64748b;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .contact-item i {
+            width: 16px;
+            color: var(--primary-color);
+        }
+        .contact-item a {
+            color: inherit;
+            text-decoration: none;
+        }
+        /* Section Common */
+        section {
+            margin-bottom: 35px;
+        }
+        h2 {
+            font-size: 22px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+        }
+        /* Summary */
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-color);
+            text-align: justify;
+        }
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        .skill-category h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: var(--secondary-color);
+        }
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .pill {
+            background: var(--light-bg);
+            border: 1px solid var(--border-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .pill.highlight {
+            background: #eff6ff;
+            border-color: #bfdbfe;
+            color: #1d4ed8;
+        }
+        /* Projects */
+        .project-card {
+            margin-bottom: 25px;
+        }
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+        .project-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+        
+        .project-title a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .project-title a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+        .project-role {
+            font-size: 14px;
+            color: #64748b;
+            font-weight: 500;
+        }
+        .project-desc {
+            font-size: 14px;
+            margin-bottom: 10px;
+            font-style: italic;
+            color: #475569;
+        }
+        .project-details ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .project-details li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+        .project-details li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        .tech-stack-row {
+            margin-top: 8px;
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .tech-badge {
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: #f1f5f9;
+            color: #475569;
+            border: 1px solid var(--border-color);
+        }
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 12px;
+            color: #94a3b8;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+        
+        /* Edit Mode Hint */
+        .edit-hint {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #333;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            font-size: 14px;
+            max-width: 300px;
+            z-index: 1000;
+        }
+        .edit-hint button {
+            background: white;
+            color: #333;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="no-print edit-hint" id="editHint">
+        <p>💡 <strong>팁:</strong> 내용을 직접 수정하려면 텍스트를 클릭하세요! (편집 가능 모드)<br>완료되면 <code>Ctrl+P</code>를 눌러 'PDF로 저장'을 선택하세요.</p>
+        <button onclick="document.getElementById('editHint').style.display='none'">닫기</button>
+    </div>
+    <!-- A4 Container -->
+    <div class="container" contenteditable="true">
+        
+        <!-- Header -->
+        <header>
+            <div class="header-left">
+                <h1>김재희 (Kim Jae Hui)</h1>
+                <div class="role">Game Client & Server Developer</div>
+                <div class="summary-text">
+                    Unity 클라이언트 아키텍처와 C++/C# 분산 서버 구조에 강점이 있는 게임 개발자입니다. 
+                    유지보수 가능한 Clean Architecture 설계와 네트워크 동기화 최적화에 깊은 관심을 가지고 있습니다.
+                </div>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>[이메일 입력]</span> <!-- User to fill -->
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>[전화번호 입력]</span> <!-- User to fill -->
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/kimjaehui02">github.com/kimjaehui02</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-link"></i>
+                    <span>[블로그/포트폴리오 입력]</span> <!-- User to fill -->
+                </div>
+            </div>
+        </header>
+        <!-- Skills -->
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span class="pill highlight">C#</span>
+                        <span class="pill highlight">C++</span>
+                        <span class="pill">C</span>
+                        <span class="pill">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Game Engine & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="pill highlight">Unity 2022 LTS</span>
+                        <span class="pill">Visual Studio</span>
+                        <span class="pill">Git/GitHub</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Architecture & Design</h3>
+                    <div class="skill-tags">
+                        <span class="pill highlight">Clean Architecture</span>
+                        <span class="pill">Design Patterns</span>
+                        <span class="pill">OOP</span>
+                        <span class="pill">Data-Driven Design</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Network & Server</h3>
+                    <div class="skill-tags">
+                        <span class="pill highlight">TCP/IP & UDP</span>
+                        <span class="pill">Socket Programming</span>
+                        <span class="pill">Multi-threading</span>
+                        <span class="pill">Packet Serialization (JSON)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Projects -->
+        <section>
+            <h2>Featured Projects</h2>
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">
+                        <a href="https://github.com/kimjaehui02/PawnSurvivors">1. Pawn Survivors</a>
+                    </div>
+                    <div class="project-role">1인 개인 프로젝트 | 2023</div>
+                </div>
+                <div class="project-desc">
+                    Clean Architecture와 다양한 디자인 패턴을 적용한 로그라이크 서바이벌 게임
+                </div>
+                <div class="project-details">
+                    <ul>
+                        <li><strong>아키텍처 설계</strong>: Clean Architecture 도입으로 비즈니스 로직과 뷰 계층을 분리하여 유지보수성 향상</li>
+                        <li><strong>디자인 패턴 적용</strong>: Strategy(공격/이동), Observer(이벤트 버스), Component 패턴 등을 활용한 모듈형 구조 구현</li>
+                        <li><strong>최적화</strong>: 이벤트 버스를 통한 객체 결합도 감소, Object Pooling 도입 검토, Layer Collision Matrix 최적화</li>
+                        <li><strong>데이터 주도 설계</strong>: JSON 기반 레시피 시스템으로 캐릭터/아이템 데이터를 관리하여 확장성 확보</li>
+                        <li><strong>동적 시스템</strong>: 코드 기반의 동적 UI 생성 및 Resources 로딩 시스템 구축</li>
+                    </ul>
+                </div>
+                <div class="tech-stack-row">
+                    <span class="tech-badge">Unity 2D</span>
+                    <span class="tech-badge">C#</span>
+                    <span class="tech-badge">Clean Architecture</span>
+                    <span class="tech-badge">Observer Pattern</span>
+                    <span class="tech-badge">Newtonsoft.Json</span>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">
+                        <a href="https://github.com/kimjaehui02/TurnBasedBattler">2. C++ & C# 분산 서버 아키텍처</a>
+                    </div>
+                    <div class="project-role">개인 프로젝트 (연구/구현)</div>
+                </div>
+                <div class="project-desc">
+                    C++ 메인 서버와 C# 서브 서버 구조를 활용한 하이브리드 멀티플레이어 서버 시스템
+                </div>
+                <div class="project-details">
+                    <ul>
+                        <li><strong>분산 서버 구조</strong>: C++ 기반의 고성능 메인 서버와 생산성이 높은 C# 서브 서버 간의 통신 아키텍처 설계</li>
+                        <li><strong>하이브리드 네트워크</strong>: 중요 데이터(TCP)와 실시간 동기화 데이터(UDP) 프로토콜 혼합 사용</li>
+                        <li><strong>위치 동기화</strong>: 멀티플레이어 환경에서의 캐릭터 좌표 동기화 알고리즘 구현 및 브로드캐스팅 처리</li>
+                        <li><strong>데이터 처리</strong>: Gzip 압축을 통한 전송 효율 증대 및 JSON 직렬화를 통한 이기종 서버 간 데이터 교환</li>
+                        <li><strong>동시성 제어</strong>: Winsock API 및 멀티스레드 소켓 프로그래밍을 통한 안정적인 다중 클라이언트 처리</li>
+                    </ul>
+                </div>
+                <div class="tech-stack-row">
+                    <span class="tech-badge">C++ (Main Server)</span>
+                    <span class="tech-badge">C# (Sub Server)</span>
+                    <span class="tech-badge">TCP/UDP</span>
+                    <span class="tech-badge">Winsock</span>
+                    <span class="tech-badge">Multi-threading</span>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">
+                        <a href="https://github.com/kimjaehui02/teamUnity">3. SoulSpear-Trinity</a>
+                    </div>
+                    <div class="project-role">팀 프로젝트 | 보스전 시스템 개발</div>
+                </div>
+                <div class="project-desc">
+                    2D 보스 러시 액션 게임 (Team Unity)
+                </div>
+                <div class="project-details">
+                    <ul>
+                        <li><strong>보스 전투 시스템</strong>: JSON 데이터 기반의 보스 패턴 설계 및 상태 기계(FSM) 구현</li>
+                        <li><strong>협업 경험</strong>: Unity Timeline을 활용한 컷신 연출 및 팀원들과의 Git 기반 버전 관리 협업</li>
+                    </ul>
+                </div>
+                <div class="tech-stack-row">
+                    <span class="tech-badge">Unity</span>
+                    <span class="tech-badge">C#</span>
+                    <span class="tech-badge">JSON Data</span>
+                    <span class="tech-badge">Team Cooperation</span>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p>© 2024 Kim Jae Hui. All rights reserved. | Generated via GitHub Portfolio Assistant</p>
+        </footer>
+    </div>
+</body>
+</html>
