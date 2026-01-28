@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kimjaehui02 - Portfolio Exhibition</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;800&family=Noto+Sans+KR:wght@300;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- 배경 그래픽 (모든 페이지 공통) -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+
+    <!-- 1. 표지 (Cover) -->
+    <section class="page cover-page">
+        <div class="content-wrapper">
+            <h1 class="main-title">PORTFOLIO</h1>
+            <h2 class="sub-title">Creative Developer <br> <span class="highlight">Kim Jaehui</span></h2>
+            <div class="cover-footer">
+                <p>2026 Edition</p>
+                <p>github.com/kimjaehui02</p>
+            </div>
+        </div>
+        <button onclick="window.print()" class="floater-btn">PDF 저장</button>
+    </section>
+
+    <!-- 2. 소개 (Intro) -->
+    <section class="page intro-page">
+        <div class="content-wrapper">
+            <h3 class="section-label">01. INTRODUCTION</h3>
+            <div class="intro-grid">
+                <div class="profile-box">
+                    <div class="avatar-placeholder">K</div>
+                </div>
+                <div class="intro-text">
+                    <h2>끊임없이 도전하는 개발자<br>김재희입니다.</h2>
+                    <p>
+                        GitHub를 통해 다양한 프로젝트를 수행하며 경험을 쌓아왔습니다.
+                        Unity 게임 개발부터 Python AI, 웹 풀스택 프로젝트까지 폭넓은 기술 스펙트럼을 보유하고 있습니다.
+                        단순한 코딩을 넘어, 사용자가 즐길 수 있는 가치를 만들어내는 것을 목표로 합니다.
+                    </p>
+                    <ul class="stats-list">
+                        <li><strong>Repositories</strong> 24+</li>
+                        <li><strong>Collaborations</strong> Many Team Projects</li>
+                        <li><strong>Main Tech</strong> Unity, Python, Web</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 주요 프로젝트 쇼케이스 (Showcase) - 페이지당 1개 -->
+
+    <!-- Project 1: PawnSurvivors -->
+    <section class="page project-page">
+        <div class="content-wrapper">
+            <h3 class="section-label">02. FEATURED WORKS</h3>
+            <div class="project-layout">
+                <div class="project-visual">
+                    <!-- 스크린샷 대체용 CSS 아트 -->
+                    <div class="mockup-screen game-theme">
+                        <div class="screen-content">
+                            <span>Game Screen Placeholder</span>
+                            <div class="game-ui-mock"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h1 class="project-title">Pawn Survivors</h1>
+                    <div class="tags">
+                        <span class="badge">Unity</span>
+                        <span class="badge">Game Dev</span>
+                        <span class="badge">Survival</span>
+                    </div>
+                    <p class="project-desc">
+                        서바이벌 장르의 게임 프로젝트입니다. 체스 기물(Pawn)을 모티브로 하여, 몰려오는 적들로부터 살아남는 로그라이크 요소를 결합했습니다.
+                    </p>
+                    <ul class="key-features">
+                        <li>Unity 엔진 기반의 최적화된 게임 로직</li>
+                        <li>다양한 스킬 및 레벨업 시스템 구현</li>
+                        <li>적 AI 및 웨이브 시스템 설계</li>
+                    </ul>
+                    <a href="https://github.com/kimjaehui02/PawnSurvivors" class="repo-link">View Repository -></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 2: TurnBasedBattler -->
+    <section class="page project-page">
+        <div class="content-wrapper">
+            <div class="project-layout reverse"> <!-- 좌우 반전 레이아웃 -->
+                <div class="project-info">
+                    <h1 class="project-title">Turn Based Battler</h1>
+                    <div class="tags">
+                        <span class="badge">Game Logic</span>
+                        <span class="badge">Strategy</span>
+                        <span class="badge">C#</span>
+                    </div>
+                    <p class="project-desc">
+                        전략적 턴제 전투 시스템 프로토타입입니다. 복잡한 턴 순서 계산과 스킬 상호작용을 구조적으로 설계하여 확장성을 확보했습니다.
+                    </p>
+                    <ul class="key-features">
+                        <li>턴 관리자(Turn Manager) 시스템 구조화</li>
+                        <li>캐릭터 스탯 및 상태이상(Status Effect) 시스템</li>
+                        <li>확장 가능한 스킬 데이터 구조</li>
+                    </ul>
+                    <a href="https://github.com/kimjaehui02/TurnBasedBattler" class="repo-link">View Repository -></a>
+                </div>
+                <div class="project-visual">
+                    <div class="mockup-screen strategy-theme">
+                        <div class="screen-content">
+                            <span>Battle Logic Flow</span>
+                            <div class="flow-chart-mock"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 3: TeamProject22 -->
+    <section class="page project-page">
+        <div class="content-wrapper">
+            <div class="project-layout">
+                <div class="project-visual">
+                    <div class="mockup-screen team-theme">
+                        <div class="screen-content">
+                            <span>Team Collaboration</span>
+                            <div class="collab-mock"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h1 class="project-title">Team Project 2022</h1>
+                    <div class="tags">
+                        <span class="badge">Collaboration</span>
+                        <span class="badge">Project</span>
+                    </div>
+                    <p class="project-desc">
+                        팀 단위로 진행한 대규모 합작 프로젝트입니다. Git을 활용한 협업 워크플로우를 익히고, 각 파트별 기능을 통합하는 경험을 쌓았습니다.
+                    </p>
+                    <ul class="key-features">
+                        <li>Git Branch 전략을 통한 버전 관리</li>
+                        <li>파트별 모듈화 및 통합 테스트 진행</li>
+                        <li>이슈 트래커를 활용한 버그 수정 및 일정 관리</li>
+                    </ul>
+                    <a href="https://github.com/kimjaehui02/TeamProject22" class="repo-link">View Repository -></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 기타 프로젝트 목록 (Archive) -->
+    <section class="page archive-page">
+        <div class="content-wrapper">
+            <h3 class="section-label">03. ARCHIVE</h3>
+            <p class="archive-desc">그 외 다양한 기술적 시도와 학습의 기록들입니다.</p>
+
+            <div class="archive-grid">
+                <!-- item -->
+                <div class="archive-item">
+                    <h4>server</h4>
+                    <p>백엔드 서버 구현 및 네트워크 통신 기초</p>
+                    <span class="mini-tag">Network</span>
+                </div>
+                <div class="archive-item">
+                    <h4>Pytorch</h4>
+                    <p>딥러닝 모델 학습 및 PyTorch 프레임워크 실습</p>
+                    <span class="mini-tag">AI</span>
+                </div>
+                <div class="archive-item">
+                    <h4>newtravel</h4>
+                    <p>여행 관련 애플리케이션 서비스 기획 및 구현</p>
+                    <span class="mini-tag">App</span>
+                </div>
+                <div class="archive-item">
+                    <h4>WonRoom</h4>
+                    <p>부동산/공간 관리 관련 프로젝트</p>
+                    <span class="mini-tag">Web/App</span>
+                </div>
+                <div class="archive-item">
+                    <h4>unity2 / unityex</h4>
+                    <p>유니티 엔진 기능 실험 및 프로토타이핑</p>
+                    <span class="mini-tag">Unity</span>
+                </div>
+                <div class="archive-item">
+                    <h4>OOP / OOP2021</h4>
+                    <p>객체지향 프로그래밍 학습 및 과제 아카이브</p>
+                    <span class="mini-tag">CS</span>
+                </div>
+                <div class="archive-item">
+                    <h4>kimjaehui02.github.io</h4>
+                    <p>웹 프로그래밍 및 블로그 호스팅</p>
+                    <span class="mini-tag">Web</span>
+                </div>
+                <div class="archive-item">
+                    <h4>GameMakerProjects</h4>
+                    <p>게임메이커 스튜디오 활용 초기 게임 개발</p>
+                    <span class="mini-tag">Game</span>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <p>Thank you for watching.</p>
+        </div>
+    </section>
+
+</body>
+
+</html>
