@@ -5,10 +5,8 @@
     --text-main: #ffffff;
     --text-muted: #888888;
     --accent-color: #5542ff;
-    /* Deep Violet Blue */
     --accent-light: #7d6dff;
     --card-bg: #1a1a1e;
-
     --page-padding: 60px;
     --max-width: 1400px;
 }
@@ -26,7 +24,6 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Background Shapes */
 .bg-shape {
     position: fixed;
     border-radius: 50%;
@@ -51,10 +48,8 @@ body {
     left: -100px;
 }
 
-/* Page Layout for Print & Screen */
 .page {
     min-height: 100vh;
-    /* 화면에서는 꽉 찬 높이 */
     height: auto;
     width: 100%;
     display: flex;
@@ -63,7 +58,6 @@ body {
     position: relative;
     padding: var(--page-padding);
     border-bottom: 1px solid #222;
-    /* 화면에서의 구분선 */
 }
 
 .content-wrapper {
@@ -85,6 +79,7 @@ body {
     margin-bottom: 2rem;
     background: linear-gradient(to right, #fff, #aaa);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -196,53 +191,31 @@ body {
 .mockup-screen {
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #1a1a1e, #2a2a2e);
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
 }
 
-.mockup-screen.game-theme {
-    background: radial-gradient(circle at center, #2d1b36, #000);
+.mockup-screen.ai-theme {
+    background: radial-gradient(circle at center, #361b26, #000);
 }
 
-.mockup-screen.strategy-theme {
-    background: radial-gradient(circle at center, #1b2636, #000);
+.mockup-screen.flutter-theme {
+    background: radial-gradient(circle at center, #1b2d36, #000);
 }
 
-.mockup-screen.team-theme {
-    background: radial-gradient(circle at center, #1b3626, #000);
+.mockup-screen.optimization-theme {
+    background: radial-gradient(circle at center, #261b36, #000);
+}
+
+.mockup-screen.arch-theme {
+    background: radial-gradient(circle at center, #36261b, #000);
 }
 
 .screen-content {
     text-align: center;
-    color: #555;
+    color: #888;
     font-weight: 700;
-}
-
-.game-ui-mock,
-.flow-chart-mock,
-.collab-mock {
-    width: 200px;
-    height: 8px;
-    background: #444;
-    margin: 20px auto;
-    border-radius: 4px;
-    position: relative;
-}
-
-.game-ui-mock::after {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 40px;
-    background: #5542ff;
-    border-radius: 50%;
-    box-shadow: 0 0 20px #5542ff;
 }
 
 .project-title {
@@ -250,6 +223,16 @@ body {
     font-weight: 800;
     margin-bottom: 1.5rem;
     line-height: 1;
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+}
+
+.project-date {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 0.1rem;
 }
 
 .tags {
@@ -307,6 +290,18 @@ body {
     transform: translateX(10px);
 }
 
+/* Graph/Mockups */
+.ai-node-mock,
+.mobile-ui-mock,
+.performance-graph-mock,
+.arch-diag-mock {
+    width: 200px;
+    height: 8px;
+    background: #333;
+    margin: 20px auto;
+    border-radius: 4px;
+}
+
 /* 4. Archive Page */
 .archive-grid {
     display: grid;
@@ -361,7 +356,7 @@ body {
     z-index: 100;
 }
 
-/* PRINT OPTIMIZATION (핵심) */
+/* PRINT OPTIMIZATION */
 @media print {
     @page {
         size: A4;
@@ -378,12 +373,9 @@ body {
         height: 100vh;
         break-after: always;
         page-break-after: always;
-        border: none;
         padding: 40px;
-        /* 인쇄 여백 */
     }
 
-    /* 마지막 페이지는 넘김 없음 */
     .page:last-child {
         break-after: auto;
     }
@@ -393,7 +385,46 @@ body {
     }
 
     .bg-shape {
-        opacity: 0.2;
-        /* 인쇄 잉크 절약을 위해 약간 흐리게 */
+        display: none !important;
+    }
+
+    .project-title {
+        -webkit-text-fill-color: #000 !important;
+        color: #000 !important;
+    }
+}
+
+/* 5. Contact Info Card (Dynamic) */
+.contact-info {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    z-index: 101;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
     }
 }

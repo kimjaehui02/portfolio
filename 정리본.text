@@ -1,0 +1,39 @@
+### 1. Safe Project (AI & Full-stack)
+Problem : 로컬 개발 환경(OS, 라이브러리 버전) 불일치로 인한 실행 오류 및 추후 AWS 클라우드 배포 시 인프라 관리의 복잡성 예상.
+Action : Python FastAPI 서버 및 주요 환경을 Docker 컨테이너화하여 독립적인 가상 환경 구축.
+Result : 개발 환경에 구애받지 않는 안정적인 런타임 확보 및 AWS ECS/EC2 등으로의 클라우드 배포 및 확장성(Scalability) 기반 마련.
+Learning : 단순 환경 구축을 넘어, 클라우드 네이티브 환경(Cloud-native)을 고려한 배포 프로세스와 컨테이너 기반 인프라 관리의 중요성을 체득.
+
+Problem : 백엔드 API 규약이 개발 과정에서 빈번하게 변경되거나 확장되면서, 이에 의존하던 프론트엔드 UI 로직이 함께 흔들리며 유지보수 비용 증대.
+Action : Clean Architecture를 도입하여 UI(Presentation)와 비즈니스 로직(Domain), 외부 통신(Data) 레이어를 엄격히 분리.
+Result : API 규약이 수정되더라도 Data 레이어의 대응만으로 UI 파손을 방지하고, 기능 추가 시 기존 코드에 영향이 적은 구조적 안정성 확보.
+Learning : 변동성이 큰 외부 환경(API, 라이브러리)으로부터 핵심 비즈니스 로직을 보호하는 디커플링(Decoupling)의 실질적 이점을 경험.
+
+Problem : Python (AI), Java (Spring), React (Front) 등 각기 다른 기술 스택을 사용하는 팀원 간의 소통 및 데이터 형식 불일치로 인한 시스템 연동 단계의 잦은 오류 발생.
+Action : API 명세서 정의 및 공통 DTO(Data Transfer Object) 구조를 선제적으로 설계하여 팀 내 공유.
+Result : 연동 테스트 시 발생하는 타입 에러 및 필드명 불일치 문제를 사전에 차단하고 통합 개발 속도 향상.
+Learning : 대규모 프로젝트 및 이기종 시스템 간 협업 시, 명확한 '인터페이스 계약(Interface Contract)' 중심 개발의 중요성과 소통 비용 절감 효과를 체득.
+
+---
+
+### 2. Business Mobile Solution (Flutter Scoops)
+Problem : 앱 규모가 커지며 위젯 트리 내에 로직과 상태가 뒤섞여 코드 가독성이 떨어지고, 서버 연동 로직의 가변성에 취약한 구조.
+Action : Riverpod(상태 관리)과 Clean Architecture를 결합하여 비즈니스 로직을 UseCase 단위로 모듈화하고 UI와 완전히 격리.
+Result : 서버 API 변경 시에도 도메인 로직 수정 없이 데이터 핸들러만 교체 가능하여 개발 생산성 및 코드 재사용성 극대화.
+Learning : 복잡한 기술 스택이 얽힌 환경일수록 명확한 아키텍처 가이드라인이 프로젝트의 일관된 품질 유지에 핵심임을 인지.
+
+---
+
+### 3. Core Network Engine (TurnBasedBattler)
+Problem : 초기 클래스 기반 데이터 직렬화 시 불필요한 메타데이터와 메모리 오버헤드로 인해 대규모 패킷 처리 효율 저하 우려.
+Action : 16바이트 이하의 구조체(Struct) 설계 및 메모리 정렬(Padding) 고려를 통한 통신 데이터 구조 최적화 시도.
+Result : 데이터 전송 효율을 극대화하였으며, 결과적으로 190ms 규모의 지연시간을 2ms 수준으로 단축한 성능 최적화 사례 도출 (JIT 가속 등 복합 요인 포함).
+Learning : 수치상의 성과뿐만 아니라, 로우레벨 구조 설계(Value Type 활용)가 시스템 전체 응답성에 미치는 최적화 원리를 깊이 이해함.
+
+---
+
+### 4. Pawn Survivors (Unity Architecture)
+Problem : 프로젝트 규모 확장과 아이템/스킬 종류 증가에 따라 클래스 간 직접 참조가 늘어나며 스파게티 코드와 기능 간 충돌 발생.
+Action : 이벤트 버스(Event Bus) 패턴을 도입하여 각 시스템(공격, 체력, 사운드 등)이 서로의 존재를 모른 채 통신하도록 설계.
+Result : 새로운 아이템이나 능력을 추가할 때 기존 코드를 수정할 필요가 없는 '개방-폐쇄 원칙(OCP)'을 실현하고 유지보수 생산성 향상.
+Learning : 느슨한 결합(Loose Coupling)과 관심사의 분리(SoC)가 대규모 게임 시스템 안정화에 끼치는 결정적인 역할을 학습.

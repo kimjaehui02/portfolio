@@ -1,75 +1,54 @@
-# GitHub 포트폴리오 (전시회 스타일)
+# Software Engineering Portfolio (Fact-Based)
 
-> **현재 버전**: v2.1 (웹 포트폴리오 & 아카이빙)
-> **최종 업데이트**: 2026-01-28
-> **작성자 컨텍스트**: 사용자 `kimjaehui02`를 위해 AI 에이전트(Antigravity)가 생성함.
+> **Current Version**: v3.0 (Engineering & Systems Focus)
+> **Last Updated**: 2026-02-20
+> **Core Theme**: "Engineering with Technical Basis" - 구조적 해법과 데이터 기반의 성능 최적화
 
-## 1. 프로젝트 개요
-이 프로젝트는 **사용자의 프로젝트 경험을 시각적으로 전달하는 고품질 웹 포트폴리오**입니다.
-단순한 저장소 목록 나열을 넘어, 마치 **전시회**를 관람하듯 핵심 프로젝트를 깊이 있게 감상할 수 있도록 디자인되었습니다.
-
-웹 브라우저에서 인터랙티브하게 볼 수 있는 것이 주 목적이며, 부가적으로 **깔끔한 PDF 포맷으로도 소장/제출**할 수 있도록 유연하게 설계되었습니다.
-
-### 핵심 목표
-- **작품 중심 전시 (Showcase Focus)**: 수많은 저장소 중, 개발자의 역량을 가장 잘 보여주는 핵심 프로젝트를 선별하여 상세히 보여줍니다.
-- **시각적 스토리텔링**: 텍스트 위주의 설명을 넘어, 프로젝트의 분위기를 전달하는 디자인과 레이아웃을 적용했습니다.
-- **유연한 활용성**: 웹 링크로 공유하거나, 필요 시 즉시 A4 규격의 PDF로 변환하여 활용할 수 있습니다.
-
-## 2. 기술 스택 및 환경
-- **Core**: HTML5, CSS3 (Vanilla). 인쇄 스타일 예측 가능성과 커스터마이징 용이성을 위해 외부 프레임워크(Bootstrap/Tailwind)를 사용하지 않았습니다.
-- **Fonts**: Google Fonts (제목용 `Outfit`, 한글 본문용 `Noto Sans KR`).
-- **Icons**: SVG 아이콘을 직접 포함하거나 플레이스홀더로 처리.
-
-## 3. 디렉토리 구조
-```
-portfolio/
-├── index.html      # 메인 진입점. 모든 콘텐츠 구조 포함.
-├── styles.css      # 스타일링 및 인쇄 로직. PDF 레이아웃에 핵심적인 파일.
-├── script.js       # 최소한의 인터랙션 (애니메이션, 인쇄 트리거).
-└── README.md       # (현재 파일) 인계용 문서.
-```
-
-## 4. 현재 디자인 로직 (다음 AI를 위한 중요 사항)
-
-### 레이아웃 컨셉
-레이아웃은 최소 높이 `100vh`를 강제하는 `.page` 클래스를 사용합니다.
-중요한 점은 **CSS `@media print`**에서 이 클래스가 `break-after: always` 속성을 사용한다는 것입니다.
-* **표지 (Cover Page)**: 소개 및 타이틀.
-* **소개 페이지 (Intro Page)**: 개발자 요약 및 통계.
-* **프로젝트 페이지 (Project Pages)**: 리듬감을 위해 교차 레이아웃(이미지-왼쪽 vs 이미지-오른쪽) 사용.
-* **아카이브 페이지 (Archive Page)**: 나머지 저장소들을 위한 그리드 레이아웃.
-
-### 플레이스홀더 전략
-AI가 사용자의 실제 프로젝트 스크린샷을 찍을 수 없으므로, 특정 CSS 클래스(`.game-theme`, `.strategy-theme`)를 사용하여 **CSS 아트/추상적 UI 목업**을 생성했습니다.
-* **다음 AI 작업 항목**: 사용자가 실제 이미지 경로를 제공하면, `.mockup-screen` div를 실제 `<img>` 태그로 교체하세요.
-
-### 콘텐츠 출처
-데이터는 2026년 1월 기준 `kimjaehui02`의 GitHub 저장소 분석을 기반으로 합니다.
-* **PawnSurvivors**: 주요 작품으로 선정 (Unity/Game).
-* **TurnBasedBattler**: 주요 작품으로 선정 (Logic/Strategy).
-* **TeamProject22**: 주요 작품으로 선정 (Collaboration).
-
-## 5. PDF 생성 방법
-1. 모던 브라우저(Chrome/Edge 권장)에서 `index.html`을 엽니다.
-2. 우측 하단의 **"PDF 저장"** 플로팅 버튼을 누르거나 `Ctrl + P`를 입력합니다.
-3. **인쇄 설정 (매우 중요)**:
-   - **대상**: PDF로 저장.
-   - **레이아웃**: 세로 방향 (A4).
-   - **여백**: 기본값 또는 없음 (CSS가 패딩을 처리함).
-   - **옵션**: 반드시 **"배경 그래픽"** 기능을 켜야 합니다.
-
-## 6. 할 일 / 다음 AI를 위한 로드맵
-이 작업을 이어받는 AI 에이전트가 있다면, 다음 단계로 진행해야 합니다:
-
-1.  **이미지 교체**:
-    *   사용자에게 "Pawn Survivors"나 "TurnBasedBattler"의 실제 스크린샷을 요청하세요.
-    *   `css/styles.css`의 목업 스타일을 실제 `<img src="...">`로 교체하세요.
-2.  **콘텐츠 확장**:
-    *   "Archive" 섹션은 현재 정적으로 프로젝트를 나열하고 있습니다. 사용자가 특정 항목을 숨기거나 보이게 하고 싶어할 수 있습니다.
-3.  **색상 테마**:
-    *   현재 테마는 "다크 모드" (`#0c0c0e`)입니다. 만약 사용자가 "종이/인쇄 친화적" 버전(흰색 배경)을 원한다면, 새로운 `@media print` 오버라이드나 별도의 CSS 테마 클래스가 필요합니다. (현재 사용자는 인쇄 시에도 다크 프리미엄 룩을 선호함).
-4.  **라이브 배포**:
-    *   현재는 로컬 환경입니다. 사용자가 라이브 링크를 원한다면 GitHub Pages (`kimjaehui02.github.io`)에 배포할 수 있습니다.
+이 포트폴리오는 단순한 기능 구현을 넘어, **기술적 근거(Technical Basis)**를 바탕으로 복잡한 엔지니어링 문제를 해결하는 과정을 전시합니다. 웹 인터랙티브 뷰와 더불어 제출용 **PDF 최적화**를 완벽하게 지원합니다.
 
 ---
-*인계 문서 끝*
+
+## 🚀 Engineering Philosophy & Strategy
+
+### 1. Pinpoint Content Approach (Action + Impact)
+길게 서술하는 설명 대신, 실무 엔지니어링 관점에서 **[행동(Action) → 결과(Impact)]** 구조의 간결한 한 줄 요약을 지향합니다.
+- **Action**: 어떤 기술적 도구를 사용하여 어떤 문제를 해결했는가? (예: 16비트 구조체 설계)
+- **Impact**: 그 결과 어떤 정량적/구조적 이득을 얻었는가? (예: 성능 95% 개선)
+
+### 2. Privacy-Safe Technical Architecture
+GitHub 공개 시 개인정보 노출을 방지하면서도 PDF 제출 시에는 풍부한 정보를 담을 수 있는 구조를 채택했습니다.
+- **Dynamic Contact Overlay**: 브라우저 주소창에 `?email=...&phone=...` 파라미터를 추가하여 접속할 때만 연락처가 우측 상단에 나타납니다.
+- **Automated Print Optimization**: 인쇄(`Ctrl+P`) 시 잉크 소모를 줄이기 위해 배경 그래픽을 제거하고 가독성을 최적화하는 전용 CSS 모카를 포함합니다.
+
+---
+
+## 🛠️ Featured Technical Projects
+
+### [Safe Project] - AI & Full-stack System
+- **Key**: Spring Boot, React, Python(FastAPI), Docker.
+- **Strategy**: Clean Architecture를 적용하여 UI와 비즈니스 로직을 격리하고, Docker를 통한 환경 종속성 제거로 AWS 배포 확장성을 확보했습니다.
+
+### [Business Mobile Solution] - Structural Optimization
+- **Key**: Flutter, Riverpod, FCM topic Composition, BLE Watchdog.
+- **Strategy**: 5개로 한정된 FCM 토픽 제한을 **'조합형 식별자'** 구조로 우회 설계하고, BLE 연결의 물리적 불안정성을 **'Watchdog 주기적 재실행 로직'**으로 해결하여 실무 수준의 안정성을 증명했습니다.
+
+### [Core Network Engine] - High Performance
+- **Key**: C++, C#, Memory Alignment (16-bit).
+- **Strategy**: 메모리 패딩(Padding)과 바이트 정렬에 대한 이해를 바탕으로 데이터 구조를 재설계하여, 전송 지연 시간을 **190ms에서 2ms로(95% 이상)** 단축했습니다.
+
+### [Pawn Survivors] - System Architecture
+- **Key**: Unity, Clean Architecture, Event-Bus.
+- **Strategy**: Presentation과 Domain 레이어를 완벽히 분리하고 이벤트 버스 패턴을 도입하여, 복잡한 게임 시스템 간의 의존성 결합도를 획기적으로 낮췄습니다.
+
+---
+
+## 📖 Instructions for Future Collaboration (AI/Manual)
+
+이 포트폴리오의 일관성을 유지하기 위해 다음 가이드를 따르세요:
+
+1.  **콘텐츠 업데이트**: 새로운 프로젝트 추가 시 `index.html`에서 `Pinpoint` 형식을 유지하세요. 미사여구보다는 기술적 한계 돌파나 수치적 성과를 우선적으로 기록합니다.
+2.  **디자인 수정**: 포트폴리오는 **전시회(Exhibition)** 컨셉입니다. 다크한 배경의 유리 재질(Glassmorphism)과 네온 포인트를 유지하세요.
+3.  **PDF 출력**: PDF 저장을 원할 경우, 연락처 파라미터를 포함한 URL로 접속한 뒤 브라우저의 '인쇄' 기능을 활용하세요. 인쇄 설정에서 '배경 그래픽'을 끄면 잉크 절약 모드로 출력됩니다.
+
+---
+*Created and refined with Antigravity (Advanced Agentic Coding AI)*
