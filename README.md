@@ -14,7 +14,7 @@
 
 ---
 
-## 🛠️ Key Projects
+## 🛠️ Key Projects 
 
 ### 1. Safe Project (AI & Full-stack)
 - **Stack**: Spring Boot, React, Python(FastAPI), Docker
