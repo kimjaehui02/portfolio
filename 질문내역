@@ -1,0 +1,227 @@
+1️⃣ Infrastructure & DevOps
+🔹 GitHub Actions + AWS ECR CI/CD
+
+예상 질문
+
+GitHub Actions 워크플로우는 어떤 트리거 전략을 썼나요? (push, PR, tag 기반 릴리즈 등)
+
+AWS 인증은 어떻게 처리했나요? (IAM User vs OIDC federation)
+
+Docker layer caching은 어떻게 최적화했나요?
+
+멀티 스테이지 빌드를 사용했나요?
+
+배포는 ECR까지만인가요, EC2 pull까지 자동화했나요?
+
+깊게 물어볼 가능성
+
+“CI는 이해했는데 CD는 어떻게 구성했나요?”
+
+→ SSH pull 방식인지, CodeDeploy인지, self-hosted runner인지 설명 준비 필요.
+
+🔹 t2.micro + 2GB Swap
+
+이건 굉장히 잘 쓴 포인트라 질문 확률 높습니다.
+
+예상 질문
+
+Swap 사용 시 실제 성능 저하는 없었나요?
+
+왜 인스턴스 스펙 업 대신 swap을 선택했나요?
+
+vm.swappiness 값은 조정했나요?
+
+OOM Killer 문제는 없었나요?
+
+LLM이 로컬 모델인가요, 외부 API인가요?
+
+면접관 의도는:
+
+“메모리 병목을 진짜 이해하고 있는가?”
+
+Swap은 해결책이지만 근본 해결은 아닙니다.
+성능 trade-off를 설명할 수 있어야 합니다.
+
+🔹 EBS 확장 (8GB → 25GB)
+
+예상 질문
+
+파일시스템은 ext4인가요? xfs인가요?
+
+growpart 사용했나요?
+
+재부팅 없이 확장했나요?
+
+Docker volume은 어떻게 처리했나요?
+
+핵심 질문
+
+“무중단으로 어떻게 했나요?”
+
+실제로 운영 경험이 있는지 보는 질문입니다.
+
+🔹 Docker Compose 이기종 스택
+
+예상 질문
+
+네트워크 모드는 bridge인가요?
+
+서비스 디스커버리는 어떻게 했나요?
+
+환경변수 관리 전략은?
+
+운영 환경에서도 Compose 사용했나요?
+
+추가로:
+
+“왜 Kubernetes는 안 썼나요?”
+
+→ 규모/복잡도 대비 합리적 선택이었다는 논리 필요.
+
+2️⃣ AI Backend (FastAPI / RAG)
+
+이 부분이 가장 많이 파고들릴 영역입니다.
+
+🔹 RAG 파이프라인
+
+예상 질문
+
+Retrieval 방식은? (Top-K? MMR?)
+
+Embedding 모델은 무엇 사용?
+
+Chunking 전략은?
+
+Context window는 어떻게 설계했나요?
+
+Hallucination 대응은?
+
+면접관 의도:
+
+“진짜 RAG를 이해했는가, 아니면 라이브러리만 썼는가?”
+
+🔹 ChromaDB 벡터 DB
+
+예상 질문
+
+왜 ChromaDB를 선택했나요? (FAISS vs Pinecone vs Weaviate 비교 가능?)
+
+수 만 개라면 인덱싱 속도는?
+
+Persistent storage 설정은?
+
+업데이트 전략은?
+
+특히:
+
+“임베딩은 언제 재생성하나요?”
+
+🔹 비동기 처리
+
+예상 질문
+
+FastAPI에서 async/await을 어떻게 사용했나요?
+
+CPU bound 작업은 어떻게 처리했나요?
+
+이벤트 루프 블로킹 문제는 없었나요?
+
+uvicorn worker 설정은?
+
+이건 이해 깊이 검증 질문입니다.
+
+🔹 GPT API 기반 시뮬레이션
+
+예상 질문
+
+프롬프트 설계 전략은?
+
+토큰 비용 관리 어떻게 했나요?
+
+Temperature는?
+
+사용자별 personalization은 어떻게 반영했나요?
+
+3️⃣ Full-stack (Spring / React / Unity)
+🔹 JWT 보안 아키텍처
+
+이건 거의 무조건 질문 나옵니다.
+
+예상 질문
+
+Access / Refresh 토큰 분리했나요?
+
+토큰 저장 위치는? (localStorage vs httpOnly cookie)
+
+XSS 대응은?
+
+토큰 재발급 플로우는?
+
+면접관 의도:
+
+“실제 운영 가능한 보안 설계인지”
+
+🔹 FastAPI ↔ Spring 통신
+
+예상 질문
+
+동기 HTTP 호출인가요?
+
+Circuit breaker는?
+
+타임아웃 설정은?
+
+장애 발생 시 fallback 전략은?
+
+🔹 Unity WebGL + React 통신
+
+이건 흥미로운 포인트라 질문 나올 확률 높습니다.
+
+예상 질문
+
+WebGL 빌드 용량 최적화는?
+
+JS bridge 구조는?
+
+소켓은 WebSocket인가요?
+
+브라우저 메모리 이슈는?
+
+🎯 가장 많이 물릴 5개 핵심 질문
+
+왜 t2.micro + swap을 선택했나요?
+
+RAG 파이프라인에서 chunking 전략은?
+
+JWT 보안 설계 상세 구조는?
+
+FastAPI async 구조에서 병목 해결 방식은?
+
+ChromaDB를 선택한 이유는?
+
+💡 보완하면 더 좋아질 부분
+
+현재 이력서는 “무엇을 했다” 중심입니다.
+
+면접에서는 반드시 이렇게 바뀝니다:
+
+“왜 그렇게 했나요?”
+“다른 선택지는?”
+“문제가 생겼을 때 어떻게 디버깅했나요?”
+
+그래서 각 항목마다:
+
+선택 이유
+
+대안 비교
+
+트러블슈팅 경험
+
+이 3가지를 준비해두면 완벽합니다.
+
+원하시면
+👉 기술 면접관 관점에서 실제 압박 질문 세트
+👉 이력서 문장을 더 고급스럽게 다듬기
+👉 포지션별(백엔드/AI/인프라) 예상 꼬리질문 정리
+
+중 하나를 같이 정리해 드릴게요.

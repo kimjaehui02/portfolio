@@ -17,7 +17,7 @@
 ## 🛠️ Key Projects 
 
 - **Stack**: Spring Boot, React, FastAPI, AWS (EC2/ECR), Docker, GitHub Actions
-- **Focus**: AWS t2.micro의 자원 제약을 Swap 구성 및 EBS 확장으로 해결하고, Docker Compose와 GitHub Actions를 결합한 CI/CD 파이프라인으로 배포 자동화를 수립했습니다. FastAPI 기반 RAG 엔진을 구현하여 보이스피싱 판별 기능을 구축했습니다.
+- **Focus**: AWS t2.micro의 자원 제약을 Swap 구성 및 EBS 확장으로 해결하고, Docker Compose와 GitHub Actions를 결합한 CI/CD 파이프라인으로 배포 자동화 수립. FastAPI 기반 RAG 엔진 구현을 통한 보이스피싱 판별 기능 구축.
 
 ### 2. Business Mobile Solution
 - **Stack**: Flutter, Riverpod, BLE, FCM
