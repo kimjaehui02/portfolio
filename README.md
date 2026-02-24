@@ -16,9 +16,8 @@
 
 ## 🛠️ Key Projects 
 
-### 1. Safe Project (AI & Full-stack)
-- **Stack**: Spring Boot, React, Python(FastAPI), Docker
-- **Focus**: Clean Architecture를 적용하여 비즈니스 로직을 격리하고, Docker를 통해 AWS 배포 환경의 일관성을 확보했습니다.
+- **Stack**: Spring Boot, React, FastAPI, AWS (EC2/ECR), Docker, GitHub Actions
+- **Focus**: AWS t2.micro의 자원 제약을 Swap 구성 및 EBS 확장으로 해결하고, Docker Compose와 GitHub Actions를 결합한 CI/CD 파이프라인으로 배포 자동화를 수립했습니다. FastAPI 기반 RAG 엔진을 구현하여 보이스피싱 판별 기능을 구축했습니다.
 
 ### 2. Business Mobile Solution
 - **Stack**: Flutter, Riverpod, BLE, FCM

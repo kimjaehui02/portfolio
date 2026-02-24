@@ -24,7 +24,15 @@ Learning : 복잡한 기술 스택이 얽힌 환경일수록 명확한 아키텍
 
 ---
 
-### 3. Core Network Engine (TurnBasedBattler)
+### 3. WonRoom (Full-stack Botanical Management)
+Problem : 난개발로 인해 각 파트별 역할 분담이 모호해지고, 파트 간 데이터 연동 시 타입 불일치 및 통신 비효율 발생.
+Action : Flask Blueprints를 활용하여 백엔드 로직을 모듈화하고, pymysql 기반의 직접적인 SQL 쿼리 최적화 수행. Flutter 클라이언트는 Dio 패키지와 JSON Serialization 패턴을 적용하여 네트워킹 레이어 설계. 
+Result : 수동적인 DB 연결을 넘어선 체계적인 API 아키텍처를 구축하고, flutter_secure_storage를 통한 보안 세션 관리 등 실무적인 기술 스택 적용.
+Learning : 이기종 간의 Full-stack 데이터 연동 시, Dio와 Blueprints 같은 기술적 도구를 활용한 명확한 계층 분리가 시스템의 확장성과 유지보수성에 끼치는 영향력을 체득.
+
+---
+
+### 4. Core Network Engine (TurnBasedBattler)
 Problem : 초기 클래스 기반 데이터 직렬화 시 불필요한 메타데이터와 메모리 오버헤드로 인해 대규모 패킷 처리 효율 저하 우려.
 Action : 16바이트 이하의 구조체(Struct) 설계 및 메모리 정렬(Padding) 고려를 통한 통신 데이터 구조 최적화 시도.
 Result : 데이터 전송 효율을 극대화하였으며, 결과적으로 190ms 규모의 지연시간을 2ms 수준으로 단축한 성능 최적화 사례 도출 (JIT 가속 등 복합 요인 포함).
@@ -32,7 +40,7 @@ Learning : 수치상의 성과뿐만 아니라, 로우레벨 구조 설계(Value
 
 ---
 
-### 4. Pawn Survivors (Unity Architecture)
+### 5. Pawn Survivors (Unity Architecture)
 Problem : 프로젝트 규모 확장과 아이템/스킬 종류 증가에 따라 클래스 간 직접 참조가 늘어나며 스파게티 코드와 기능 간 충돌 발생.
 Action : 이벤트 버스(Event Bus) 패턴을 도입하여 각 시스템(공격, 체력, 사운드 등)이 서로의 존재를 모른 채 통신하도록 설계.
 Result : 새로운 아이템이나 능력을 추가할 때 기존 코드를 수정할 필요가 없는 '개방-폐쇄 원칙(OCP)'을 실현하고 유지보수 생산성 향상.
