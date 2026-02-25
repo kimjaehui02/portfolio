@@ -25,10 +25,10 @@ Learning : 복잡한 기술 스택이 얽힌 환경일수록 명확한 아키텍
 ---
 
 ### 3. WonRoom (Full-stack Botanical Management)
-Problem : 난개발로 인해 각 파트별 역할 분담이 모호해지고, 파트 간 데이터 연동 시 타입 불일치 및 통신 비효율 발생.
-Action : Flask Blueprints를 활용하여 백엔드 로직을 모듈화하고, pymysql 기반의 직접적인 SQL 쿼리 최적화 수행. Flutter 클라이언트는 Dio 패키지와 JSON Serialization 패턴을 적용하여 네트워킹 레이어 설계. 
-Result : 수동적인 DB 연결을 넘어선 체계적인 API 아키텍처를 구축하고, flutter_secure_storage를 통한 보안 세션 관리 등 실무적인 기술 스택 적용.
-Learning : 이기종 간의 Full-stack 데이터 연동 시, Dio와 Blueprints 같은 기술적 도구를 활용한 명확한 계층 분리가 시스템의 확장성과 유지보수성에 끼치는 영향력을 체득.
+Problem : 도메인 확장(식료품, 커뮤니티 등)에 따른 시스템 복잡도 증가 및 외부 연동 시 데이터 정합성 이슈 발생.
+Action : Flask Blueprints 기반으로 11개 이상의 모듈을 독립 구조화하고, Dio와 FlutterSecureStorage를 연동한 보안 통신 규격 수립.
+Result : 계층화된 백엔드 아키텍처를 통해 유지보수 효율을 높이고, 하드웨어 보안 영역을 활용한 안전한 사용자 세션 관리 메커니즘 구축.
+Learning : 이기종 간 대규모 연동 시, 명확한 모듈화와 '인터페이스 계약'이 시스템의 확장성에 끼치는 결정적인 영향력을 체득함.
 
 ---
 
